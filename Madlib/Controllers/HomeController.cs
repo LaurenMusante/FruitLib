@@ -5,18 +5,19 @@ namespace Madlib.Controllers
 {
   public class HomeController : Controller
   {
-    //    public string Hello() { return "Hello friend!"; }
-
-    [Route("/")]
-    public ActionResult Madlibber()
+    [Route("/Madlibber")]
+    public ActionResult Madlibber(string word1, string word2, string word3, string word4 )
     {
         MadLibFields myMadLibFields = new MadLibFields();
-        myMadLibFields.Word1_PastTenseVerb = "smurfed";
-        myMadLibFields.Word2_Adjective = "spiky";
-        myMadLibFields.Word3_Noun = "black bean";
-        myMadLibFields.Word4_Verb = "bother";
+        myMadLibFields.Word1 = word1;
+        myMadLibFields.Word2 = word2;
+        myMadLibFields.Word3 = word3;
+        myMadLibFields.Word4 = word4;
         return View(myMadLibFields);
     }
+
+    [Route("/form")]
+    public ActionResult Form() { return View(); }
 
   }
 }

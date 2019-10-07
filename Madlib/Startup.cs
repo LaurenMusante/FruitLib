@@ -24,11 +24,12 @@ namespace Madlib
 
     public void Configure(IApplicationBuilder app)
     {
+      app.UseDeveloperExceptionPage();
       app.UseMvc(routes =>
       {
         routes.MapRoute(
-          name: "default",
-          template: "{controller=Home}/{action=Index}/{id?}");
+        name: "default",
+        template: "{controller=Home}/{action=Index}/{id?}");
       });
 
       app.Run(async (context) =>
